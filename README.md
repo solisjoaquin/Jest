@@ -94,3 +94,59 @@ test("Probar un callback",()=>{
   });
 });
 ```
+
+# Test de promesas
+
+en el archivo global.test.js agregar 
+
+```js
+const reverseString2 = str =>{
+  return new Promise((resolve, reject)=>{
+    if (!str){
+      reject(Error('Error'))
+    }
+    resolve(str.split("").reverse().join(""))
+  });
+};
+
+test("Probar una promesa",()=>{
+  return reverseString2('Hola').then(str)=>{
+    expect(str).ToBe('aloH');
+  });
+});
+```
+
+# Test de async await
+
+en el archivo global.test.js agregar 
+
+```js
+const reverseString2 = str =>{
+  return new Promise((resolve, reject)=>{
+    if (!str){
+      reject(Error('Error'))
+    }
+    resolve(str.split("").reverse().join(""))
+  });
+};
+
+test("Probar async/await", async ()=>{
+  const string = await reverseString2('Hola');
+  expect(string).ToBe('aloH');
+});
+```
+
+# Usar afterEach y afterAll
+
+afterEach --> despues de cada prueba
+afterAll --> despues de todas las pruebas
+beforeEach  --> antes de cada prueba
+
+```js
+afterEach(() => console.log('despues de cada prueba'));
+afterAll(() => console.log('despues de todas las pruebas'));
+
+beforeEach(() => console.log('antes de cada prueba'));
+beforeAll(() => console.log('antes de todas las pruebas'));
+```
+
