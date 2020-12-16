@@ -46,3 +46,51 @@ o
 ```
 npm test 
 ```
+
+# Test de arrays
+
+en el archivo global.test.js agregar 
+
+```js
+const frutas = ['manzana', 'banana','pera'];
+
+test("Tenemos una manzana",()=>{
+  expect(frutas).toContain('manzana');
+});
+```
+
+# Test de Mayor que..
+
+en el archivo global.test.js agregar 
+
+```js
+test("Mayor que",()=>{
+  expect(10).toBeGreaterThan(9);
+});
+```
+
+# Test de Boleanos
+
+en el archivo global.test.js agregar 
+
+```js
+test("Verdadero",()=>{
+  expect(true).tobeTruthy();
+});
+```
+
+# Test de callbacks
+
+en el archivo global.test.js agregar 
+
+```js
+const reverseString = (str, callback)=>{
+  callback(str.split("").reverse().join(""))
+}
+
+test("Probar un callback",()=>{
+  reverseString('Hola', (str)=>{
+    expect(str).ToBe('aloH');
+  });
+});
+```
