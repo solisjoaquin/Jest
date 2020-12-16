@@ -139,7 +139,9 @@ test("Probar async/await", async ()=>{
 # Usar afterEach y afterAll
 
 afterEach --> despues de cada prueba
+
 afterAll --> despues de todas las pruebas
+
 beforeEach  --> antes de cada prueba
 
 ```js
